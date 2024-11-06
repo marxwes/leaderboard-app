@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useCallback } from 'react';
+import Leaderboard from './Leaderboard/Leaderboard';
+import ScoreSubmission from './Leaderboard/ScoreSubmission';
 
-function App() {
+const LeaderboardApp = () => {
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
+
+  const handleScoreSubmitted = useCallback(() => {
+    setRefreshTrigger(prev => prev + 1);
+  }, []);
+
+  const handleRemove = useCallback((rank) => {
+    console.log(`Entry with rank ${rank} removed`);
+    setRefreshTrigger(prev => prev + 1);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Leaderboard onRemove={handleRemove} />
+
+      {/* if manual entry is needed */}
+      {/* <ScoreSubmission onScoreSubmitted={handleScoreSubmitted} /> */}
     </div>
   );
-}
+};
 
-export default App;
+export default LeaderboardApp;

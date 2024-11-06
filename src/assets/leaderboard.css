@@ -1,0 +1,149 @@
+body {
+  background-color: #131518;
+  color: #ffffff;
+}
+
+.leaderboard-container {
+  max-width: 800px;
+  margin: 64px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 200px;
+  height: auto;
+  padding: 32px;
+}
+
+.leaderboard-title {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1e2126;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #2a2e35;
+}
+
+.leaderboard-table th {
+  background-color: #388080;
+  color: white;
+  font-weight: bold;
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background-color: #23272d;
+}
+
+.leaderboard-table tr:hover {
+  background-color: #2a2e35;
+}
+
+.score-cell {
+  position: relative;
+}
+
+.remove-button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #999;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.leaderboard-table tr:hover .remove-button {
+  opacity: 1;
+}
+
+.remove-button:hover {
+  color: #ff4444;
+}
+/* Score Submission */
+
+.score-submission-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #1e2126;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submission-title {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.score-submission-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #2a2e35;
+  border-radius: 4px;
+  background-color: #23272d;
+  color: #ffffff;
+  font-size: 16px;
+  max-width: 380px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #388080;
+  box-shadow: 0 0 0 2px rgba(56, 128, 128, 0.2);
+}
+
+.submit-button {
+  background-color: #388080;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #2a6060;
+}
+
+.submit-button:active {
+  background-color: #1e4545;
+}
