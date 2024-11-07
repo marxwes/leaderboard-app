@@ -4,9 +4,10 @@ import logo from '../assets/LOGO.png';
 
 const Leaderboard = ({ onRemove }) => {
   const [leaderboardData, setLeaderboardData] = useState([]);
+  const HOST = "https://aiopoker.com:3001/"
 
   const fetchLeaderboardData = useCallback(() => {
-    fetch('http://localhost:3001/leaderboard')
+    fetch(`${HOST}/leaderboard`)
       .then(response => response.json())
       .then(data => setLeaderboardData(data))
       .catch(error => console.error('Error fetching leaderboard data:', error));
@@ -19,7 +20,7 @@ const Leaderboard = ({ onRemove }) => {
   }, [fetchLeaderboardData]);
 
   const handleRemove = (rank) => {
-    fetch(`http://localhost:3001/leaderboard/${rank}`, { method: 'DELETE' })
+    fetch(`${HOST}leaderboard/${rank}`, { method: 'DELETE' })
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
